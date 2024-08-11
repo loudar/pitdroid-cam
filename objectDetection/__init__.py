@@ -3,8 +3,8 @@ import cv2
 
 from objectDetection.objectDetection import get_output_layers, draw_prediction
 
-weights = 'yolov2-tiny.weights'
-config = 'yolov2-tiny.cfg'
+weights = 'yolov2.weights'
+config = 'yolov2.cfg'
 classesFile = 'coco.names'
 
 classes = None
@@ -61,5 +61,3 @@ def detect_objects(frame):
         w = box[2]
         h = box[3]
         draw_prediction(frame, classes, COLORS, class_ids[i], confidences[i], round(x), round(y), round(x + w), round(y + h))
-
-    cv2.imshow("object detection", frame)

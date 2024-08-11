@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a40408fa-f7a1-4a7b-bd2d-d56a5696c508" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/camera.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/coco.names" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/liveObjectDetection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objectDetection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objectDetection/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objectDetection/objectDetection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yolov2-tiny.cfg" afterDir="false" />
+    <list default="true" id="a40408fa-f7a1-4a7b-bd2d-d56a5696c508" name="Changes" comment="add live object detection">
+      <change afterPath="$PROJECT_DIR$/yolov2.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objectDetection/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/objectDetection/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objectDetection/objectDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/objectDetection/objectDetection.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +40,7 @@
     "Python.liveObjectDetection.executor": "Run",
     "Python.objectDetection.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/alexa/Documents/coding/robot/camera/camera",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -135,15 +125,39 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723401185639</updated>
-      <workItem from="1723401187024" duration="2603000" />
+      <workItem from="1723401187024" duration="5375000" />
     </task>
+    <task id="LOCAL-00001" summary="add live object detection">
+      <option name="closed" value="true" />
+      <created>1723403916095</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723403916095</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add live object detection" />
+    <option name="LAST_COMMIT_MESSAGE" value="add live object detection" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/camera$liveObjectDetection.coverage" NAME="liveObjectDetection Coverage Results" MODIFIED="1723403521917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/camera$liveObjectDetection.coverage" NAME="liveObjectDetection Coverage Results" MODIFIED="1723407645407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/camera$objectDetection.coverage" NAME="objectDetection Coverage Results" MODIFIED="1723401312171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
