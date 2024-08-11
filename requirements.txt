@@ -1,3 +1,7 @@
 opencv-python
 imutils
 numpy
+sounddevice
+soundfile
+SpeechRecognition
+pydub
