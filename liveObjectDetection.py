@@ -1,7 +1,7 @@
 import os
 import cv2
 
-from audioRecording.audioRecordingTest import create_audio_thread
+from audioRecording import create_audio_thread
 from objectDetection import detect_objects, load_weights
 from objectDetection.objectDetection import draw_text
 
@@ -18,6 +18,8 @@ def main():
     load_weights()
     if os.path.exists(transcript_file):
         os.remove(transcript_file)
+    with open(transcript_file, "a", encoding="utf-8") as f:
+        f.write("")
     audio_thread = create_audio_thread(transcript_file)
 
     while True:
@@ -32,7 +34,13 @@ def main():
         if os.path.exists(transcript_file):
             with open(transcript_file, "r", encoding="utf-8") as f:
                 full_transcript = f.read()
-                transcript = full_transcript.split("\n")[-1]
+                lines = full_transcript.split("\n")
+                if len(lines) > 1:
+                    last_line = lines[-2]
+                    if last_line.strip() != "":
+                        transcript = last_line
+        else:
+            print("[INFO] No transcript file found")
 
         draw_text(frame, 0, transcript, 10, 10, (255, 255, 255))
         cv2.imshow("Objects", frame)
