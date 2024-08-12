@@ -4,30 +4,61 @@ from objectDetection import detect_objects
 
 
 def main():
-    # initialize the video stream
     print("[INFO] starting video stream...")
     vs = cv2.VideoCapture(0)
+    print("[INFO] video stream started")
+    last_object_count = 0
 
     while True:
-        # read the next frame from the file
         (grabbed, frame) = vs.read()
 
         if not grabbed:
             break
 
-        detect_objects(frame)
+        boxes, confidences, indices = detect_objects(frame)
+        # show_objects(frame, boxes, indices, last_object_count)
 
-        cv2.imshow("Frame", frame)
+        cv2.imshow("Objects", frame)
         key = cv2.waitKey(1) & 0xFF
 
         if key == ord("q"):
             break
 
-    # release the file pointers
+        if key == ord(" "):
+            while True:
+                key = cv2.waitKey(1) or 0xff
+                if key == ord(" "):
+                    break
+
     print("[INFO] cleaning up...")
     vs.release()
-    cv2.destroyAllWindows()
 
 
 if __name__ == "__main__":
     main()
+
+
+def show_objects(frame, boxes, indices, last_object_count):
+    if len(indices) < last_object_count:
+        print(f"Detected {len(indices)} objects")
+        for j in range(len(indices), last_object_count):
+            cv2.destroyWindow(f"Object {j}")
+
+    for i in indices:
+        try:
+            box = boxes[i]
+        except:
+            i = i[0]
+            box = boxes[i]
+
+        x = box[0]
+        y = box[1]
+        w = box[2]
+        h = box[3]
+        cropped_frame = frame[int(y):int(y + h), int(x):int(x + w)]
+        if cropped_frame.size != 0:
+            cv2.imshow(f"Object {i}", cropped_frame)
+        else:
+            print(f"Object {i} has empty bounding box")
+
+    last_object_count = len(indices)

@@ -3,8 +3,8 @@ import cv2
 
 from objectDetection.objectDetection import get_output_layers, draw_prediction
 
-weights = 'yolov2.weights'
-config = 'yolov2.cfg'
+weights = 'yolov2-tiny.weights'
+config = 'yolov2-tiny.cfg'
 classesFile = 'coco.names'
 
 classes = None
@@ -13,9 +13,10 @@ with open(classesFile, 'r') as f:
     classes = [line.strip() for line in f.readlines()]
 
 COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
-print(f"Loaded {len(classes)} classes. Now loading weights from {weights}...")
+print(f"[INFO] Loaded {len(classes)} classes. Now loading weights from {weights}...")
 net = cv2.dnn.readNet(weights, config)
-print("Weights loaded.")
+print("[INFO] Weights loaded.")
+
 
 def detect_objects(frame):
     (H, W) = frame.shape[:2]
@@ -61,3 +62,5 @@ def detect_objects(frame):
         w = box[2]
         h = box[3]
         draw_prediction(frame, classes, COLORS, class_ids[i], confidences[i], round(x), round(y), round(x + w), round(y + h))
+
+    return boxes, confidences, indices
