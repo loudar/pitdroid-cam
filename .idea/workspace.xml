@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a40408fa-f7a1-4a7b-bd2d-d56a5696c508" name="Changes" comment="works.">
-      <change afterPath="$PROJECT_DIR$/segmentation/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="a40408fa-f7a1-4a7b-bd2d-d56a5696c508" name="Changes" comment="work on depth detection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/depthDetection/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/depthDetection/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/depthDetection/zoe_depth.py" beforeDir="false" afterPath="$PROJECT_DIR$/depthDetection/zoe_depth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/liveDepthDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/liveDepthDetection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/liveObjectDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/liveObjectDetection.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +191,7 @@
       <workItem from="1723408837853" duration="417000" />
       <workItem from="1723452015007" duration="801000" />
       <workItem from="1723452863955" duration="3012000" />
-      <workItem from="1723496204127" duration="5513000" />
+      <workItem from="1723496204127" duration="6326000" />
     </task>
     <task id="LOCAL-00001" summary="add live object detection">
       <option name="closed" value="true" />
@@ -254,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723495796347</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="work on depth detection">
+      <option name="closed" value="true" />
+      <created>1723501760714</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1723501760714</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,12 +282,13 @@
     <MESSAGE value="improve audio recording threading" />
     <MESSAGE value="audio transcription with whisper :D" />
     <MESSAGE value="works." />
-    <option name="LAST_COMMIT_MESSAGE" value="works." />
+    <MESSAGE value="work on depth detection" />
+    <option name="LAST_COMMIT_MESSAGE" value="work on depth detection" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pitdroid_cam$liveObjectDetection.coverage" NAME="liveObjectDetection Coverage Results" MODIFIED="1723455875614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/camera$audioRecordingTest.coverage" NAME="audioRecordingTest Coverage Results" MODIFIED="1723480231081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/audioRecording" />
-    <SUITE FILE_PATH="coverage/camera$liveDepthDetection.coverage" NAME="liveDepthDetection Coverage Results" MODIFIED="1723501624747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/camera$liveDepthDetection.coverage" NAME="liveDepthDetection Coverage Results" MODIFIED="1723502443431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/camera$liveObjectDetection.coverage" NAME="liveObjectDetection Coverage Results" MODIFIED="1723495595554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/camera$objectDetection.coverage" NAME="objectDetection Coverage Results" MODIFIED="1723401312171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pitdroid_cam$liveDepthDetection.coverage" NAME="liveDepthDetection Coverage Results" MODIFIED="1723454803581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

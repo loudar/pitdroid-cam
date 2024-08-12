@@ -28,7 +28,12 @@ def get_depth(in_file):
         if os.path.exists(in_file) is False:
             continue
 
-        frame = np.fromfile(in_file).reshape((480, 640, 3))
+        nd_arr = np.fromfile(in_file, np.uint8)
+        bytearr = nd_arr.tobytes()
+        try:
+            frame = PIL.Image.frombytes("RGB", (640, 480), bytearr)
+        except:
+            continue
 
         if frame is None:
             print(f"Could not read the file {in_file}. Check that the file exists and the path is correct.")
@@ -37,6 +42,7 @@ def get_depth(in_file):
             colored = colorize(depth)
             out_frame = cv2.cvtColor(colored, cv2.COLOR_RGB2BGR)
             cv2.imshow("Depth", out_frame)
+            cv2.waitKey(1) & 0xFF
             os.remove(in_file)
 
 
