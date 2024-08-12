@@ -18,7 +18,7 @@ def main():
     load_weights()
     if os.path.exists(transcript_file):
         os.remove(transcript_file)
-    create_audio_thread(transcript_file)
+    audio_thread = create_audio_thread(transcript_file)
 
     while True:
         (grabbed, frame) = vs.read()
@@ -30,8 +30,9 @@ def main():
         # show_objects(frame, boxes, indices, last_object_count)
 
         if os.path.exists(transcript_file):
-            with open(transcript_file, "r") as f:
-                transcript = f.read()
+            with open(transcript_file, "r", encoding="utf-8") as f:
+                full_transcript = f.read()
+                transcript = full_transcript.split("\n")[-1]
 
         draw_text(frame, 0, transcript, 10, 10, (255, 255, 255))
         cv2.imshow("Objects", frame)
@@ -49,6 +50,7 @@ def main():
     print("[INFO] cleaning up...")
     vs.release()
     cv2.destroyAllWindows()
+    audio_thread.join()
 
 
 if __name__ == "__main__":

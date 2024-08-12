@@ -14,3 +14,5 @@ torchvision
 timm~=0.6.12
 fastapi
 uvicorn
+openai
+python-dotenv

@@ -2,22 +2,30 @@ import math
 import os
 import sys
 import uuid
-from multiprocessing import Process
-import sounddevice as sd
 import numpy as np
-from scipy.io.wavfile import write
+import sounddevice as sd
 import speech_recognition as sr
+from openai import OpenAI
+from multiprocessing import Process
+from scipy.io.wavfile import write
 from pydub import AudioSegment
+from dotenv import load_dotenv
 
+load_dotenv()
 # Configuration
 CHUNK_DURATION = 0.5  # 100ms
-SILENCE_THRESHOLD = -20.0  # silence threshold in dB
+SILENCE_THRESHOLD = -30.0  # silence threshold in dB
 SILENCE_DURATION = 2  # seconds
 SAMPLE_RATE = 44100  # Hz
 AUDIO_CLIPPING_LEVEL = 0.5
 CHANNELS = 1  # change to 2 for stereo sound
 DEVICE = None  # change to specific device if needed
 r = sr.Recognizer()
+recognition_engine = "whisper"
+
+openai = None
+if recognition_engine == "whisper":
+    openai = OpenAI()
 
 
 def record_audio(transcript_file):
@@ -60,17 +68,33 @@ def write_and_transcribe_audio(chunks, transcript_file):
 
 def transcribe_audio(transcript_file, audio_file):
     print(f"Transcribing {audio_file}...")
-    with sr.AudioFile(audio_file) as source:
-        audio = r.record(source)
-        transcript = r.recognize_sphinx(audio)
-        if transcript is not None:
-            print(f"Transcript for {audio_file}: ", transcript)
-            with open(transcript_file, "a", encoding="utf-8") as f:
-                f.write(transcript + "\n")
-        else:
-            print(f"No transcript for {audio_file}")
+    transcript = recognize_text_whisper(audio_file)
+    if transcript is not None:
+        print(f"Transcript for {audio_file}: ", transcript)
+        with open(transcript_file, "a", encoding="utf-8") as f:
+            f.write(transcript + "\n")
+    else:
+        print(f"No transcript for {audio_file}")
 
-    os.remove(audio_file)
+
+def recognize_text_sphinx(audio):
+    return r.recognize_sphinx(audio)
+
+
+def recognize_text_whisper(audio_file_path):
+    try:
+        with open(audio_file_path, "rb") as audio_file:
+            transcription = openai.audio.transcriptions.create(
+                model="whisper-1",
+                file=audio_file
+            )
+        os.remove(audio_file_path)
+        return transcription.text
+    except sr.UnknownValueError:
+        print("Google Web Speech API could not understand audio")
+    except sr.RequestError as e:
+        print("Could not request results from Google Web Speech API; {0}".format(e))
+    return None
 
 
 def create_audio_thread(transcript_file):
