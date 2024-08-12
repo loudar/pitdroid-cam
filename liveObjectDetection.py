@@ -1,6 +1,8 @@
+import math
 import os
-
 import cv2
+import numpy as np
+import sounddevice as sd
 
 from audioRecording.audioRecordingTest import create_audio_thread
 from objectDetection import detect_objects, load_weights
@@ -18,6 +20,9 @@ def main():
     current_audio_thread = None
     transcript = ""
     load_weights()
+    SAMPLE_RATE = 44100  # Hz
+    CHANNELS = 1  # change to 2 for stereo sound
+    DEVICE = None  # change to specific device if needed
 
     while True:
         (grabbed, frame) = vs.read()
