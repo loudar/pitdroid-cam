@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a40408fa-f7a1-4a7b-bd2d-d56a5696c508" name="Changes" comment="audio stuff generally working...not optimal yet">
+    <list default="true" id="a40408fa-f7a1-4a7b-bd2d-d56a5696c508" name="Changes" comment="improve audio recording a lot :D">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/audioRecording/audioRecordingTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/audioRecording/audioRecordingTest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/liveObjectDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/liveObjectDetection.py" afterDir="false" />
@@ -217,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723483363094</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="improve audio recording a lot :D">
+      <option name="closed" value="true" />
+      <created>1723484888717</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723484888717</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,12 +247,13 @@
     <MESSAGE value="add live object detection" />
     <MESSAGE value="better labels, also use bigger yolo model" />
     <MESSAGE value="audio stuff generally working...not optimal yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="audio stuff generally working...not optimal yet" />
+    <MESSAGE value="improve audio recording a lot :D" />
+    <option name="LAST_COMMIT_MESSAGE" value="improve audio recording a lot :D" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pitdroid_cam$liveObjectDetection.coverage" NAME="liveObjectDetection Coverage Results" MODIFIED="1723455875614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/camera$audioRecordingTest.coverage" NAME="audioRecordingTest Coverage Results" MODIFIED="1723480231081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/audioRecording" />
-    <SUITE FILE_PATH="coverage/camera$liveObjectDetection.coverage" NAME="liveObjectDetection Coverage Results" MODIFIED="1723484845955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/camera$liveObjectDetection.coverage" NAME="liveObjectDetection Coverage Results" MODIFIED="1723485978013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/camera$objectDetection.coverage" NAME="objectDetection Coverage Results" MODIFIED="1723401312171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pitdroid_cam$liveDepthDetection.coverage" NAME="liveDepthDetection Coverage Results" MODIFIED="1723454803581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

@@ -1,6 +1,7 @@
 import math
 import os
 import sys
+import uuid
 from multiprocessing import Process
 import sounddevice as sd
 import numpy as np
@@ -10,16 +11,13 @@ from pydub import AudioSegment
 
 # Configuration
 CHUNK_DURATION = 0.5  # 100ms
-SILENCE_THRESHOLD = -17.0  # silence threshold in dB
+SILENCE_THRESHOLD = -20.0  # silence threshold in dB
 SILENCE_DURATION = 2  # seconds
 SAMPLE_RATE = 44100  # Hz
 AUDIO_CLIPPING_LEVEL = 0.5
 CHANNELS = 1  # change to 2 for stereo sound
 DEVICE = None  # change to specific device if needed
 r = sr.Recognizer()
-
-if os.path.exists("temp.wav"):
-    os.remove("temp.wav")
 
 
 def record_audio(transcript_file):
@@ -46,27 +44,36 @@ def record_audio(transcript_file):
             full_audio = AudioSegment(combined_full_data, frame_rate=SAMPLE_RATE, sample_width=2, channels=1)
             if full_audio.max_dBFS > SILENCE_THRESHOLD:
                 print("Silence after sound detected. Transcribing audio...")
-                transcribe_audio(chunks, transcript_file)
-                return
+                write_and_transcribe_audio(chunks, transcript_file)
+                chunks = []
         else:
             sys.stdout.write(".")
 
 
-def transcribe_audio(chunks, transcript_file):
+def write_and_transcribe_audio(chunks, transcript_file):
     if len(chunks) > 0:
-        # Save wave audio
-        write('temp.wav', SAMPLE_RATE, np.concatenate(chunks))
-        # Transcribe audio
-        with sr.AudioFile('temp.wav') as source:
-            audio = r.record(source)
-            transcript = r.recognize_sphinx(audio)
-            if transcript is not None:
-                print("Transcript: ", transcript)
-                with open(transcript_file, "w") as f:
-                    f.write(transcript)
+        id = uuid.uuid4()
+        audio_file = f'temp_{id}.wav'
+        write(audio_file, SAMPLE_RATE, np.concatenate(chunks))
+        Process(target=transcribe_audio, daemon=True, args=(transcript_file, audio_file)).start()
+
+
+def transcribe_audio(transcript_file, audio_file):
+    print(f"Transcribing {audio_file}...")
+    with sr.AudioFile(audio_file) as source:
+        audio = r.record(source)
+        transcript = r.recognize_sphinx(audio)
+        if transcript is not None:
+            print(f"Transcript for {audio_file}: ", transcript)
+            with open(transcript_file, "a", encoding="utf-8") as f:
+                f.write(transcript + "\n")
+        else:
+            print(f"No transcript for {audio_file}")
+
+    os.remove(audio_file)
 
 
 def create_audio_thread(transcript_file):
-    audio_thread = Process(target=record_audio, daemon=True, args=(transcript_file,))
+    audio_thread = Process(target=record_audio, args=(transcript_file,))
     audio_thread.start()
     return audio_thread

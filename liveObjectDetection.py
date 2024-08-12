@@ -1,8 +1,5 @@
-import math
 import os
 import cv2
-import numpy as np
-import sounddevice as sd
 
 from audioRecording.audioRecordingTest import create_audio_thread
 from objectDetection import detect_objects, load_weights
@@ -17,12 +14,11 @@ def main():
     vs = cv2.VideoCapture(0)
     print("[INFO] video stream started")
     last_object_count = 0
-    current_audio_thread = None
     transcript = ""
     load_weights()
-    SAMPLE_RATE = 44100  # Hz
-    CHANNELS = 1  # change to 2 for stereo sound
-    DEVICE = None  # change to specific device if needed
+    if os.path.exists(transcript_file):
+        os.remove(transcript_file)
+    create_audio_thread(transcript_file)
 
     while True:
         (grabbed, frame) = vs.read()
@@ -33,12 +29,9 @@ def main():
         boxes, confidences, indices = detect_objects(frame)
         # show_objects(frame, boxes, indices, last_object_count)
 
-        if current_audio_thread is None or current_audio_thread.is_alive() is False:
-            current_audio_thread = create_audio_thread(transcript_file)
-
-            if os.path.exists(transcript_file):
-                with open(transcript_file, "r") as f:
-                    transcript = f.read()
+        if os.path.exists(transcript_file):
+            with open(transcript_file, "r") as f:
+                transcript = f.read()
 
         draw_text(frame, 0, transcript, 10, 10, (255, 255, 255))
         cv2.imshow("Objects", frame)
@@ -55,6 +48,7 @@ def main():
 
     print("[INFO] cleaning up...")
     vs.release()
+    cv2.destroyAllWindows()
 
 
 if __name__ == "__main__":
