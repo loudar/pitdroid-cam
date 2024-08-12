@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a40408fa-f7a1-4a7b-bd2d-d56a5696c508" name="Changes" comment="better labels, also use bigger yolo model">
-      <change afterPath="$PROJECT_DIR$/depthDetection/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/depthDetection/midas_depth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/depthDetection/misc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/depthDetection/zoe_depth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/liveDepthDetection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/audioRecording/audioRecordingTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audioRecording/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audioRecording/modules/desktop_module.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audioRecording/modules/ra_module_interface.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/liveObjectDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/liveObjectDetection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/objectDetection/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/objectDetection/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +53,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.audioRecordingTest.executor": "Run",
     "Python.liveDepthDetection.executor": "Run",
     "Python.liveObjectDetection.executor": "Run",
     "Python.objectDetection.executor": "Run",
@@ -77,6 +77,29 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.liveObjectDetection">
+    <configuration name="audioRecordingTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="camera" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/audioRecording" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/audioRecording/audioRecordingTest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="liveDepthDetection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="camera" />
       <option name="ENV_FILES" value="" />
@@ -149,6 +172,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.liveObjectDetection" />
+        <item itemvalue="Python.audioRecordingTest" />
         <item itemvalue="Python.liveDepthDetection" />
         <item itemvalue="Python.objectDetection" />
       </list>
@@ -214,9 +238,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="better labels, also use bigger yolo model" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/camera$liveObjectDetection.coverage" NAME="liveObjectDetection Coverage Results" MODIFIED="1723407645407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pitdroid_cam$liveObjectDetection.coverage" NAME="liveObjectDetection Coverage Results" MODIFIED="1723455875614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/camera$audioRecordingTest.coverage" NAME="audioRecordingTest Coverage Results" MODIFIED="1723480231081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/audioRecording" />
+    <SUITE FILE_PATH="coverage/camera$liveObjectDetection.coverage" NAME="liveObjectDetection Coverage Results" MODIFIED="1723483225510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/camera$objectDetection.coverage" NAME="objectDetection Coverage Results" MODIFIED="1723401312171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pitdroid_cam$liveDepthDetection.coverage" NAME="liveDepthDetection Coverage Results" MODIFIED="1723454803581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pitdroid_cam$liveObjectDetection.coverage" NAME="liveObjectDetection Coverage Results" MODIFIED="1723455875614" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

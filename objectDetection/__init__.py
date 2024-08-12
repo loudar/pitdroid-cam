@@ -6,16 +6,20 @@ from objectDetection.objectDetection import get_output_layers, draw_prediction
 weights = 'yolov2-tiny.weights'
 config = 'yolov2-tiny.cfg'
 classesFile = 'coco.names'
-
 classes = None
 
 with open(classesFile, 'r') as f:
     classes = [line.strip() for line in f.readlines()]
 
 COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
-print(f"[INFO] Loaded {len(classes)} classes. Now loading weights from {weights}...")
-net = cv2.dnn.readNet(weights, config)
-print("[INFO] Weights loaded.")
+net = None
+
+
+def load_weights():
+    global net
+    print(f"[INFO] Loaded {len(classes)} classes. Now loading weights from {weights}...")
+    net = cv2.dnn.readNet(weights, config)
+    print("[INFO] Weights loaded.")
 
 
 def detect_objects(frame):

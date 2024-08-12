@@ -1,1 +1,4 @@
 *.weights
+/audioRecording/chunk.wav
+/audioRecording/temp.wav
+/transcript.txt
