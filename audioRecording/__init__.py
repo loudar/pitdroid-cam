@@ -86,12 +86,13 @@ def recognize_text_whisper(audio_file_path):
         with open(audio_file_path, "rb") as audio_file:
             transcription = openai.audio.transcriptions.create(
                 model="whisper-1",
+                language="de",
                 file=audio_file
             )
         os.remove(audio_file_path)
         return transcription.text
     except sr.UnknownValueError:
-        print("Google Web Speech API could not understand audio")
+        print("Whisper API could not understand audio")
     except sr.RequestError as e:
         print("Could not request results from Google Web Speech API; {0}".format(e))
     return None

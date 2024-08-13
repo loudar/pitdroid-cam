@@ -6,7 +6,10 @@ from objectDetection import detect_objects, load_weights
 from objectDetection.objectDetection import draw_text
 
 cwd = os.getcwd()
-transcript_file = cwd + "/transcript.txt"
+folder = "\\files"
+transcript_file = cwd + folder + "\\transcript.txt"
+if not os.path.exists(cwd + folder):
+    os.makedirs(cwd + folder)
 
 
 def main():

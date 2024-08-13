@@ -10,8 +10,8 @@ cwd = os.getcwd()
 folder = "\\files"
 transcript_file = cwd + folder + "\\transcript.txt"
 in_file = cwd + folder + "\\camdata"
-if not os.path.exists(folder):
-    os.makedirs(folder)
+if not os.path.exists(cwd + folder):
+    os.makedirs(cwd + folder)
 
 
 def main():
