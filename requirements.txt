@@ -16,3 +16,4 @@ fastapi
 uvicorn
 openai
 python-dotenv
+langchain-ollama

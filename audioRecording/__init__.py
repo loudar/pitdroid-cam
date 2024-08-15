@@ -1,5 +1,6 @@
 import math
 import os
+import re
 import sys
 import uuid
 import numpy as np
@@ -51,7 +52,7 @@ def record_audio(transcript_file):
             combined_full_data = b"".join(chunks)
             full_audio = AudioSegment(combined_full_data, frame_rate=SAMPLE_RATE, sample_width=2, channels=1)
             if full_audio.max_dBFS > SILENCE_THRESHOLD:
-                print("Silence after sound detected. Transcribing audio...")
+                print("|")
                 write_and_transcribe_audio(chunks, transcript_file)
                 chunks = []
         else:
@@ -67,12 +68,15 @@ def write_and_transcribe_audio(chunks, transcript_file):
 
 
 def transcribe_audio(transcript_file, audio_file):
-    print(f"Transcribing {audio_file}...")
+    print(f"Transcribing...")
     transcript = recognize_text_whisper(audio_file)
     if transcript is not None:
-        print(f"Transcript for {audio_file}: ", transcript)
-        with open(transcript_file, "a", encoding="utf-8") as f:
-            f.write(transcript + "\n")
+        excluded_transcripts = ["Thanks for watching!", "Thank you for watching."]
+        transcript = re.sub(r'[^\w\s]', '', transcript)
+        if transcript not in excluded_transcripts and transcript.strip() != "":
+            print(f"New transcript: ", transcript)
+            with open(transcript_file, "a", encoding="utf-8") as f:
+                f.write(transcript + "\n")
     else:
         print(f"No transcript for {audio_file}")
 
@@ -86,7 +90,7 @@ def recognize_text_whisper(audio_file_path):
         with open(audio_file_path, "rb") as audio_file:
             transcription = openai.audio.transcriptions.create(
                 model="whisper-1",
-                language="de",
+                language="en",
                 file=audio_file
             )
         os.remove(audio_file_path)

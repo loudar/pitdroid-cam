@@ -12,9 +12,9 @@ def get_tools():
             "Move",
             {
                 "direction": {
-                    "type": "string",
-                    "description": "Direction to move",
-                    "enum": ["forward", "backward", "left", "right"]
+                    "type": "integer",
+                    "description": "Direction to move, as an angle from 0 to 360 degrees (0 is forward, 90 is right, 180 is backward, 270 is left)",
+                    "default": "0"
                 },
                 "steps": {
                     "type": "integer",

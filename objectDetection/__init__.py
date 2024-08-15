@@ -68,3 +68,23 @@ def detect_objects(frame):
         draw_prediction(frame, classes, COLORS, class_ids[i], confidences[i], round(x), round(y), round(x + w), round(y + h))
 
     return boxes, confidences, indices
+
+def parse_objects(boxes, confidences, indices):
+    objects = []
+    for i in indices:
+        try:
+            box = boxes[i]
+        except:
+            i = i[0]
+            box = boxes[i]
+
+        x = box[0]
+        y = box[1]
+        w = box[2]
+        h = box[3]
+        objects.append({
+            "name": classes[i],
+            "confidence": confidences[i],
+            "box": (x, y, w, h)
+        })
+    return objects

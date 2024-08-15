@@ -1,8 +1,11 @@
 import os
+from multiprocessing import Process
+
 import cv2
 
 from audioRecording import create_audio_thread
-from objectDetection import detect_objects, load_weights
+from intentRecognition.intentRecognizer import recognize_intent
+from objectDetection import detect_objects, load_weights, parse_objects
 from objectDetection.objectDetection import draw_text
 
 cwd = os.getcwd()
@@ -24,6 +27,7 @@ def main():
     with open(transcript_file, "a", encoding="utf-8") as f:
         f.write("")
     audio_thread = create_audio_thread(transcript_file)
+    print("[INFO] Ready.")
 
     while True:
         (grabbed, frame) = vs.read()
@@ -32,6 +36,7 @@ def main():
             break
 
         boxes, confidences, indices = detect_objects(frame)
+        current_objects = parse_objects(boxes, confidences, indices)
 
         if os.path.exists(transcript_file):
             with open(transcript_file, "r", encoding="utf-8") as f:
@@ -39,8 +44,9 @@ def main():
                 lines = full_transcript.split("\n")
                 if len(lines) > 1:
                     last_line = lines[-2]
-                    if last_line.strip() != "":
-                        transcript = last_line
+                    if last_line.strip() != "" and last_line.strip() != transcript:
+                        transcript = last_line.strip()
+                        Process(target=recognize_intent, daemon=True, args=(transcript, current_objects, )).start()
         else:
             print("[INFO] No transcript file found")
 

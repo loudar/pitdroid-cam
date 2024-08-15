@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a40408fa-f7a1-4a7b-bd2d-d56a5696c508" name="Changes" comment="work on depth detection">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a40408fa-f7a1-4a7b-bd2d-d56a5696c508" name="Changes" comment="small fixes">
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/audioRecording/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/audioRecording/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/liveDepthDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/liveDepthDetection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intentRecognition/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/intentRecognition/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intentRecognition/intentRecognizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/intentRecognition/intentRecognizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/liveObjectDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/liveObjectDetection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objectDetection/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/objectDetection/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,8 +181,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.19072.16" />
-        <option value="bundled-python-sdk-8336bb23522e-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.19072.16" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-PY-242.20224.347" />
+        <option value="bundled-python-sdk-c2d6afa66fbe-39cff9de6eef-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.20224.347" />
       </set>
     </attachedChunks>
   </component>
@@ -197,6 +199,7 @@
       <workItem from="1723452015007" duration="801000" />
       <workItem from="1723452863955" duration="3012000" />
       <workItem from="1723496204127" duration="6326000" />
+      <workItem from="1723709845962" duration="1815000" />
     </task>
     <task id="LOCAL-00001" summary="add live object detection">
       <option name="closed" value="true" />
@@ -262,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723501760714</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="small fixes">
+      <option name="closed" value="true" />
+      <created>1723535508431</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1723535508431</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,14 +299,15 @@
     <MESSAGE value="audio transcription with whisper :D" />
     <MESSAGE value="works." />
     <MESSAGE value="work on depth detection" />
-    <option name="LAST_COMMIT_MESSAGE" value="work on depth detection" />
+    <MESSAGE value="small fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/camera$liveObjectDetection.coverage" NAME="liveObjectDetection Coverage Results" MODIFIED="1723495595554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/camera$audioRecordingTest.coverage" NAME="audioRecordingTest Coverage Results" MODIFIED="1723480231081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/audioRecording" />
-    <SUITE FILE_PATH="coverage/camera$liveDepthDetection.coverage" NAME="liveDepthDetection Coverage Results" MODIFIED="1723502443431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/camera$objectDetection.coverage" NAME="objectDetection Coverage Results" MODIFIED="1723401312171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pitdroid_cam$liveDepthDetection.coverage" NAME="liveDepthDetection Coverage Results" MODIFIED="1723533016431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pitdroid_cam$liveObjectDetection.coverage" NAME="liveObjectDetection Coverage Results" MODIFIED="1723534406280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/camera$audioRecordingTest.coverage" NAME="audioRecordingTest Coverage Results" MODIFIED="1723480231081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/audioRecording" />
+    <SUITE FILE_PATH="coverage/camera$objectDetection.coverage" NAME="objectDetection Coverage Results" MODIFIED="1723401312171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pitdroid_cam$liveObjectDetection.coverage" NAME="liveObjectDetection Coverage Results" MODIFIED="1723711419482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/camera$liveObjectDetection.coverage" NAME="liveObjectDetection Coverage Results" MODIFIED="1723495595554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/camera$liveDepthDetection.coverage" NAME="liveDepthDetection Coverage Results" MODIFIED="1723502443431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
